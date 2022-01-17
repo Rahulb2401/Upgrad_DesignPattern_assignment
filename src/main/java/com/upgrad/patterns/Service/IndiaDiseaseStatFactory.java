@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class IndiaDiseaseStatFactory {
     private IndianDiseaseStat diseaseShStrategy;
     private IndianDiseaseStat johnHopkinsStrategy;
+    private Object SourceType;
 
     @Autowired
     public IndiaDiseaseStatFactory(DiseaseShStrategy diseaseShStrategy, JohnHopkinsStrategy johnHopkinsStrategy) {
@@ -32,15 +33,15 @@ public class IndiaDiseaseStatFactory {
 
         //create a message for invalid disease strategy/sourceType
         //throw the message as an Illegal argument exception
-        public IndianDiseaseStat getInstance(String sourceType) {
+        public IndianDiseaseStat GetInstance(SourceType sourceType) {
 
         switch (sourceType) {
-            case "DiseaseSh": {
+            case DiseaseSh: {
                 return diseaseShStrategy;
             }
 
 
-            case "JohnHopkins": {
+            case JohnHopkins: {
                 return johnHopkinsStrategy;
             }
 

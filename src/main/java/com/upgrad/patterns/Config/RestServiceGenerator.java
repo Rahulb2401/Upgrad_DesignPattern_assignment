@@ -21,7 +21,7 @@ public class RestServiceGenerator {
         // return restTemplate object if initialized already
     	
 if(restTemplate == null) {
-
+//my code
     synchronized (RestTemplate.class) {
         if (restTemplate == null) {
 

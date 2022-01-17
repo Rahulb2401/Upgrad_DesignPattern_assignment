@@ -40,7 +40,6 @@ public class IndiaDiseaseStatFactory {
                 return diseaseShStrategy;
             }
 
-
             case JohnHopkins: {
                 return johnHopkinsStrategy;
             }

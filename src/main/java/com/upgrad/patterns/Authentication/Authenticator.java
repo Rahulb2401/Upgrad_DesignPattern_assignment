@@ -12,6 +12,12 @@ public class Authenticator {
 	// create an object of type JwtAuthProcessor
 	// Chain Authentication processors, first JWT processor is to be used first and then basic auth processor
 	// return the object
+
+    public static AuthenticationProcessor GetAuthProcessor(){
+
+        JwtAuthProcessor jwtAuthProcessor = new JwtAuthProcessor(new BasicAuthProcessor(null));
+        return jwtAuthProcessor;
+    }
 	
 
     public static AuthenticationProvider GetAuthProvider(HttpServletRequest request)

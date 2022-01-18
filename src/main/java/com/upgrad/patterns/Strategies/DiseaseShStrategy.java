@@ -35,28 +35,30 @@ public class DiseaseShStrategy implements IndianDiseaseStat {
         //write a try catch block here
 
         //try block
-        try {
-
-
-
         //obtain response from the getDiseaseShResponseResponses() method
         //store it in an object
 
         //get the response using the getCases() method
         //return the response after rounding it up to 0 decimal places
 
+        try {
+            Object getDisease = getDiseaseShResponseResponses();
 
-    }
+            double cases = Math.floor(getDiseaseShResponseResponses().getCases());
+
+            return String.valueOf(cases);
+        }
+
         catch(Exception e) {
-
 
             //catch block
             //log the error
 
+logger.info("Oops!!! We are unable to get the response at the moment");
+
             //return null
             return null;
         }
-        return null;
     }
 
     private DiseaseShResponse getDiseaseShResponseResponses() {

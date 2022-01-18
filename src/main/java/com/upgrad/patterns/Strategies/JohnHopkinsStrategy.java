@@ -41,11 +41,23 @@ public class JohnHopkinsStrategy implements IndianDiseaseStat {
 			//Map the data to "confirmed" value (use getStats() and getConfirmed() to get stats value and confirmed value)
 			//Reduce the data to get a sum of all the "confirmed" values
 			//return the response after rounding it up to 0 decimal places
+
+		try{
+			Object getJohnHopkins = getJohnHopkinResponses();
+
+
+return null;
+		}
+
 		//catch block
 			//log the error
 			//return null
+		catch(Exception e){
+			logger.info("not found");
+			return null;
 
-	
+		}
+
 
 	}
 

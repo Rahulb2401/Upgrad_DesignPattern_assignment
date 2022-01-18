@@ -45,14 +45,14 @@ public class JohnHopkinsStrategy implements IndianDiseaseStat {
 		try{
 			Object getJohnHopkins = getJohnHopkinResponses();
 
-			//filter
+			//filter and adding based on country = India
 			List<Float> totalCases = Arrays.stream(getJohnHopkinResponses()).filter
 					(country -> country.getCountry().equals("India")).map(x -> x.getStats().getConfirmed()).collect(Collectors.toList());
 
-Float sum = totalCases.stream().reduce(0F, (a, b) -> a+b );
-long total = sum.longValue();
+			Float sum = totalCases.stream().reduce(0F, (a, b) -> a+b );
+			long total = sum.longValue();
 
-return String.valueOf(total);
+			return String.valueOf(total);
 		}
 
 		//catch block
@@ -63,7 +63,6 @@ return String.valueOf(total);
 			return null;
 
 		}
-
 
 	}
 

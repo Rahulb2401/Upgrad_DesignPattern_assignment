@@ -44,8 +44,9 @@ public class DiseaseShStrategy implements IndianDiseaseStat {
         try {
             Object getDisease = getDiseaseShResponseResponses();
 
-            double cases = Math.floor(getDiseaseShResponseResponses().getCases());
-
+            long cases = (long) Math.floor(getDiseaseShResponseResponses().getCases());
+            System.out.println(cases);
+            System.out.println(String.valueOf(cases));
             return String.valueOf(cases);
         }
 

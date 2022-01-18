@@ -45,15 +45,21 @@ public class JohnHopkinsStrategy implements IndianDiseaseStat {
 		try{
 			Object getJohnHopkins = getJohnHopkinResponses();
 
+			//filter
+			List<Float> totalCases = Arrays.stream(getJohnHopkinResponses()).filter
+					(country -> country.getCountry().equals("India")).map(x -> x.getStats().getConfirmed()).collect(Collectors.toList());
 
-return null;
+Float sum = totalCases.stream().reduce(0F, (a, b) -> a+b );
+long total = sum.longValue();
+
+return String.valueOf(total);
 		}
 
 		//catch block
 			//log the error
 			//return null
 		catch(Exception e){
-			logger.info("not found");
+			logger.info("Oops!!! We are unable to get the response at the moment");
 			return null;
 
 		}
